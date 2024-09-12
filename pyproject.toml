@@ -5,12 +5,12 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "terminal-ai"
 version = "1.0.0"
+readme = "README.md"
 description = "terminal-ai is a command line tool that uses AI to generate terminal commands"
 dependencies = [
     "pyautogui",
     "langchain-openai",
 ]
-readme = "README.md"
 
 [project.scripts]
 ai = "terminal_ai.cli:main"
