@@ -17,3 +17,6 @@ ai = "terminal_ai.cli:main"
 
 [tool.setuptools]
 packages = ["terminal_ai"]
+
+[tool.setuptools.dynamic]
+readme = {file = "README.md", content-type = "text/markdown"}
