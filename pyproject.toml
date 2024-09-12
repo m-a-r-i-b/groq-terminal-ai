@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=45", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "terminal-ai"
+version = "1.0.0"
+dependencies = [
+    "pyautogui",
+    "langchain-openai",
+]
+
+[project.scripts]
+ai = "terminal_ai.cli:main"
+
+[tool.setuptools]
+packages = ["terminal_ai"]

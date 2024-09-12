@@ -26,8 +26,6 @@ def main():
 
     if args.instruction:
         command = generate_command(model_choice, ' '.join(args.instruction))
-        
-        # Simulate typing the command
         pyautogui.write(command)
     else:
         print("Please provide an instruction to execute.")
