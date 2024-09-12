@@ -10,6 +10,7 @@ dependencies = [
     "pyautogui",
     "langchain-openai",
 ]
+readme = "README.md"
 
 [project.scripts]
 ai = "terminal_ai.cli:main"
