@@ -1,7 +1,7 @@
-# terminal-ai
+# cli-ai
 
 ## Description
-terminal-ai is a command line tool that uses OpenAI's API to generate terminal commands.
+cli-ai is a command line tool that uses OpenAI's API to generate terminal commands.
 
 ## Features
 - Minimal setup
@@ -11,7 +11,7 @@ terminal-ai is a command line tool that uses OpenAI's API to generate terminal c
 ## Installation
 
 ```bash
-pip install terminal-ai
+pip install cli-ai
 ```
 
 ## Usage

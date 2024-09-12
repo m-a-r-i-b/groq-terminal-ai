@@ -3,20 +3,20 @@ requires = ["setuptools>=45", "setuptools_scm[toml]>=6.2"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "terminal-ai"
+name = "cli-ai"
 version = "1.0.0"
 readme = "README.md"
-description = "terminal-ai is a command line tool that uses AI to generate terminal commands"
+description = "cli-ai is a command line tool that uses AI to generate terminal commands"
 dependencies = [
     "pyautogui",
     "langchain-openai",
 ]
 
 [project.scripts]
-ai = "terminal_ai.cli:main"
+ai = "cli_ai.cli:main"
 
 [tool.setuptools]
-packages = ["terminal_ai"]
+packages = ["cli_ai"]
 
 [tool.setuptools.dynamic]
 readme = {file = "README.md", content-type = "text/markdown"}

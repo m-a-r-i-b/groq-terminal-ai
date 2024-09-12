@@ -1,9 +1,9 @@
 import sys
 import pyautogui
-from terminal_ai.config import load_config, save_api_key, save_model
-from terminal_ai.models import ModelEnum
-from terminal_ai.utils import parse_arguments
-from terminal_ai.command_generator import generate_command
+from cli_ai.config import load_config, save_api_key, save_model
+from cli_ai.models import ModelEnum
+from cli_ai.utils import parse_arguments
+from cli_ai.command_generator import generate_command
 
 def main():
     args = parse_arguments()

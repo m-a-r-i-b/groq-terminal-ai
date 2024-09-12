@@ -1,5 +1,5 @@
 import argparse
-from terminal_ai.models import ModelEnum
+from cli_ai.models import ModelEnum
 
 def parse_arguments():
     """Parse command-line arguments."""
