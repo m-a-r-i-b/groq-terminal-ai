@@ -39,12 +39,12 @@ def save_api_key(api_key):
 def save_model(model):
     config_cache['MODEL'] = model
     save_config(config_cache)
-    print(f"MODEL saved at {CONFIG_PATH}.")
+    # print(f"MODEL saved at {CONFIG_PATH}.")
 
 def save_command_cache(command_cache):
     config_cache['COMMAND_CACHE'] = command_cache
     save_config(config_cache)
-    print(f"COMMAND_CACHE saved at {CONFIG_PATH}.")
+    # print(f"COMMAND_CACHE saved at {CONFIG_PATH}.")
 
 def load_command_cache():
     return config_cache.get('COMMAND_CACHE', {})
@@ -52,7 +52,7 @@ def load_command_cache():
 def save_instruction_history(instruction_history):
     config_cache['INSTRUCTION_HISTORY'] = instruction_history
     save_config(config_cache)
-    print(f"INSTRUCTION_HISTORY saved at {CONFIG_PATH}.")
+    # print(f"INSTRUCTION_HISTORY saved at {CONFIG_PATH}.")
 
 def load_instruction_history():
     return config_cache.get('INSTRUCTION_HISTORY', [])
@@ -60,7 +60,7 @@ def load_instruction_history():
 def save_history_size(history_size):
     config_cache['HISTORY_SIZE'] = history_size
     save_config(config_cache)
-    print(f"HISTORY_SIZE saved at {CONFIG_PATH}.")
+    # print(f"HISTORY_SIZE saved at {CONFIG_PATH}.")
 
 def load_history_size():
     return config_cache.get('HISTORY_SIZE', 3)  # Default to 3 if not set
@@ -68,7 +68,7 @@ def load_history_size():
 def save_use_history(use_history):
     config_cache['USE_HISTORY'] = use_history
     save_config(config_cache)
-    print(f"USE_HISTORY saved at {CONFIG_PATH}. {use_history}")
+    # print(f"USE_HISTORY saved at {CONFIG_PATH}. {use_history}")
 
 def load_use_history():
     return config_cache.get('USE_HISTORY', True)  # Default to True if not set

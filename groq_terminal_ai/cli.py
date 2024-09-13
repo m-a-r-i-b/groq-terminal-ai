@@ -1,5 +1,4 @@
 import sys
-import pyautogui
 from groq_terminal_ai.config import (
     load_config, save_api_key, save_model, save_history_size, load_history_size,
     save_use_history, load_use_history
@@ -12,7 +11,6 @@ def main():
     args = parse_arguments()
     config = load_config()
     
-    # Handle multiple arguments
     if args.groq_api_key:
         save_api_key(args.groq_api_key)
     if args.model:
@@ -37,8 +35,7 @@ def main():
     use_history = args.use_history if args.use_history is not None else load_use_history()
 
     if args.instruction:
-        command = generate_command(model_choice, ' '.join(args.instruction), history_size, use_history)
-        pyautogui.write(command)
+        generate_command(model_choice, ' '.join(args.instruction), history_size, use_history)
     else:
         print("Please provide an instruction to execute. or use --help for more information.")
 

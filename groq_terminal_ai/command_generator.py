@@ -1,9 +1,10 @@
 import platform
 import os
+import pyautogui
 from groq import Groq
 from groq_terminal_ai.config import load_command_cache, save_command_cache, load_instruction_history, save_instruction_history
 
-def initialize_chat_model():
+def initialize_groq_client():
     client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
     return client
 
@@ -17,10 +18,10 @@ def generate_command(model_choice: str, instruction: str, history_size: int = 3,
     normalized_instruction = instruction.lower().strip()
 
     if normalized_instruction in command_cache:
-        print("Command cache hit")
-        return command_cache[normalized_instruction]
+        pyautogui.write(command_cache[normalized_instruction])  # Use pynput for typing
+        return
     
-    chat = initialize_chat_model()
+    client = initialize_groq_client()
 
     context = ""
     if use_history and instruction_history:
@@ -29,11 +30,7 @@ def generate_command(model_choice: str, instruction: str, history_size: int = 3,
             context += f"- **Instruction**: {prev_instruction}\n  **Command**: {prev_command}\n\n"
 
 
-    print("Use history: ", use_history)
-    print("History size: ", history_size)
-    print("Context: ", context)
-
-    chat_completion = chat.chat.completions.create(
+    chat_completion = client.chat.completions.create(
         messages=[
             {
                 "role": "system",
@@ -45,9 +42,16 @@ def generate_command(model_choice: str, instruction: str, history_size: int = 3,
             }
         ],
         model=model_choice,
+        stream=True,
     )
     
-    command = chat_completion.choices[0].message.content
+    command = ""
+    for chunk in chat_completion:
+        chunk_content = chunk.choices[0].delta.content
+        if chunk_content is not None:
+            command += chunk_content
+            pyautogui.write(chunk_content)
+
     command_cache[normalized_instruction] = command
     save_command_cache(command_cache)
 
