@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "groq-terminal-ai"
-version = "1.0.0"
+version = "1.0.1"
 readme = "README.md"
 description = "groq-terminal-ai is a command line tool that uses AI to generate terminal commands"
 dependencies = [
