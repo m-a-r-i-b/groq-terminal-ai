@@ -7,7 +7,7 @@ def initialize_chat_model():
     client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
     return client
 
-def generate_command(model_choice: str, instruction: str, history_size: int = 3) -> str:
+def generate_command(model_choice: str, instruction: str, history_size: int = 3, use_history: bool = True) -> str:
     os_type = platform.system()
     shell_type = os.environ.get('SHELL') or os.environ.get('COMSPEC')
 
@@ -22,7 +22,7 @@ def generate_command(model_choice: str, instruction: str, history_size: int = 3)
     chat = initialize_chat_model()
 
     context = ""
-    if instruction_history:
+    if use_history and instruction_history:
         context = "Here are the previous instruction-command pairs of user that may or may not be related to the current instruction:\n"
         for prev_instruction, prev_command in instruction_history:
             context += f"- **Instruction**: {prev_instruction}\n  **Command**: {prev_command}\n\n"
@@ -45,9 +45,10 @@ def generate_command(model_choice: str, instruction: str, history_size: int = 3)
     command_cache[normalized_instruction] = command
     save_command_cache(command_cache)
 
-    instruction_history.append((instruction, command))
-    if len(instruction_history) > history_size:
-        instruction_history = instruction_history[-history_size:]
-    save_instruction_history(instruction_history)
+    if use_history:
+        instruction_history.append((instruction, command))
+        if len(instruction_history) > history_size:
+            instruction_history = instruction_history[-history_size:]
+        save_instruction_history(instruction_history)
 
     return command

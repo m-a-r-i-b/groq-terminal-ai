@@ -58,3 +58,13 @@ def save_history_size(history_size):
 def load_history_size():
     config = load_config()
     return config.get('HISTORY_SIZE', 3)  # Default to 3 if not set
+
+def save_use_history(use_history):
+    config = load_config()
+    config['USE_HISTORY'] = use_history
+    save_config(config)
+    print(f"USE_HISTORY saved at {CONFIG_PATH}.")
+
+def load_use_history():
+    config = load_config()
+    return config.get('USE_HISTORY', True)  # Default to True if not set
