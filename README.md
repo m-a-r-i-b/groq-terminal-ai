@@ -34,23 +34,23 @@ ai list all png files in the current directory
 
 - Choose a specific LLM model:
   ```bash
-  ai --model <model-name>
+  ai --model <model-name> (default llama3-8b-8192)
   ```
 
 - Set the history size for context-aware suggestions:
   ```bash
-  ai --history-size <number>
+  ai --history-size <number> (default 3)
   ```
 
 - Enable or disable instruction history:
   ```bash
-  ai --use-history <true/false>
+  ai --use-history <true/false> (default true)
   ```
 
 - For more information on available options:
   ```bash
   ai --help
-```
+  ```
 
 ## Supported Models
 
