@@ -56,4 +56,9 @@ ai list all png files in the current directory
 
 - llama3-8b-8192
 - gemma2-9b-it
+- gemma-7b-it
 - llama3-70b-8192
+- llama-3.1-70b-versatile
+- llama-3.1-8b-instant
+- llava-v1.5-7b-4096-preview
+- mixtral-8x7b-32768
