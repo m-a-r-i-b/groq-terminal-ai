@@ -1,7 +1,7 @@
 import platform
 import os
 from groq import Groq
-from config import load_command_cache, save_command_cache, load_instruction_history, save_instruction_history
+from groq_terminal_ai.config import load_command_cache, save_command_cache, load_instruction_history, save_instruction_history
 
 def initialize_chat_model():
     client = Groq(api_key=os.environ.get("GROQ_API_KEY"))

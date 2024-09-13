@@ -37,7 +37,7 @@ def save_command_cache(command_cache):
 
 def load_command_cache():
     config = load_config()
-    return config.get('COMMAND_CACHE', [])
+    return config.get('COMMAND_CACHE', {})
 
 def save_instruction_history(instruction_history):
     config = load_config()
@@ -63,7 +63,7 @@ def save_use_history(use_history):
     config = load_config()
     config['USE_HISTORY'] = use_history
     save_config(config)
-    print(f"USE_HISTORY saved at {CONFIG_PATH}.")
+    print(f"USE_HISTORY saved at {CONFIG_PATH}. {use_history}")
 
 def load_use_history():
     config = load_config()

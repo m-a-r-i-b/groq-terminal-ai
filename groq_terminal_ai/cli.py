@@ -24,7 +24,7 @@ def main():
         save_history_size(args.history_size)
         sys.exit(0)
 
-    if args.use_history:
+    if args.use_history is not None:
         save_use_history(args.use_history)
         sys.exit(0)
 
