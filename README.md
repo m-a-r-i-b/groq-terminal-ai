@@ -1,16 +1,20 @@
 # groq-terminal-ai
 
 ## Description
-**groq-terminal-ai** is a powerful command-line tool that leverages Groq's API to intelligently generate terminal commands based on user instructions.
 
-## Features
-- **High Performance**: Utilizes Groq's API for rapid command generation.
-- **Cross-Platform Compatibility**: Works seamlessly on Linux, Windows, and Mac operating systems.
-- **Minimal Setup**: Quick installation and easy configuration.
-- **Customizable**: Option to select different LLM models for tailored command generation.
+**groq-terminal-ai** is a CLI tool that harnesses the power of Groq's API to intelligently generate terminal commands based on natural language instructions.
 
+## Key Features
+
+- **AI-Powered Command Generation**: Leverages Groq's advanced language models to interpret user instructions and generate accurate terminal commands.
+- **Cross-Platform Compatibility**: Seamlessly operates on Linux, macOS, and Windows operating systems.
+- **Customizable Model Selection**: Offers flexibility to choose from different LLM models for tailored command generation.
+- **Command History**: Maintains a history of previous instructions and commands for context-aware suggestions.
+- **Efficient Caching**: Implements a command cache to quickly retrieve previously generated commands.
 
 ## Installation
+
+Install groq-terminal-ai using pip:
 
 ```bash
 pip install groq-terminal-ai
@@ -28,15 +32,30 @@ Step 2. Generate a command
 ai list all png files in the current directory
 ```
 
-(Optional) Choose a different LLM model
-```bash
-ai --model <model-name>
+### Optional Parameters
+
+- Choose a specific LLM model:
+  ```bash
+  ai --model <model-name>
+  ```
+
+- Set the history size for context-aware suggestions:
+  ```bash
+  ai --history-size <number>
+  ```
+
+- Enable or disable instruction history:
+  ```bash
+  ai --use-history <true/false>
+  ```
+
+- For more information on available options:
+  ```bash
+  ai --help
 ```
 
-```bash
-ai --help
-```
+## Supported Models
 
-
-## License
-This project is licensed under the MIT License.
+- llama3-8b-8192
+- gemma2-9b-it
+- llama3-70b-8192
