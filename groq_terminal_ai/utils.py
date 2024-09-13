@@ -9,6 +9,7 @@ def parse_arguments():
     # Add model argument with validation
     parser.add_argument('--model', type=str, choices=[model.value for model in ModelEnum], 
                         help='Set the Groq model to use. Supported models: ' + ', '.join([model.value for model in ModelEnum]))
+    parser.add_argument('--history-size', type=int, help='Set the default number of previous instructions to retain in history (default: 3)')
     parser.add_argument('instruction', nargs='*', help='The instruction to execute.')
     
     return parser.parse_args()

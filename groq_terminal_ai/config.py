@@ -37,4 +37,24 @@ def save_command_cache(command_cache):
 
 def load_command_cache():
     config = load_config()
-    return config.get('COMMAND_CACHE', {})
+    return config.get('COMMAND_CACHE', [])
+
+def save_instruction_history(instruction_history):
+    config = load_config()
+    config['INSTRUCTION_HISTORY'] = instruction_history
+    save_config(config)
+    print(f"INSTRUCTION_HISTORY saved at {CONFIG_PATH}.")
+
+def load_instruction_history():
+    config = load_config()
+    return config.get('INSTRUCTION_HISTORY', [])
+
+def save_history_size(history_size):
+    config = load_config()
+    config['HISTORY_SIZE'] = history_size
+    save_config(config)
+    print(f"HISTORY_SIZE saved at {CONFIG_PATH}.")
+
+def load_history_size():
+    config = load_config()
+    return config.get('HISTORY_SIZE', 3)  # Default to 3 if not set
