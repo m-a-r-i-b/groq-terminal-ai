@@ -1,11 +1,13 @@
 # groq-terminal-ai
 
 ## Description
-groq-terminal-ai is a command line tool that uses Groq's API to generate terminal commands.
+**groq-terminal-ai** is a powerful command-line tool that leverages Groq's API to intelligently generate terminal commands based on user instructions.
 
 ## Features
-- Minimal setup
-- Ability to choose between different LLMs from Groq
+- **High Performance**: Utilizes Groq's API for rapid command generation.
+- **Cross-Platform Compatibility**: Works seamlessly on Linux, Windows, and Mac operating systems.
+- **Minimal Setup**: Quick installation and easy configuration.
+- **Customizable**: Option to select different LLM models for tailored command generation.
 
 
 ## Installation
