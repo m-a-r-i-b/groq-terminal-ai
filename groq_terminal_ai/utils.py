@@ -14,7 +14,7 @@ def parse_arguments():
     parser.add_argument('instruction', nargs='*', help='The instruction to execute.')
     
     args = parser.parse_args()
-    
+
     # Convert use_history to boolean
     if args.use_history is not None:
         args.use_history = args.use_history.lower() == 'true'

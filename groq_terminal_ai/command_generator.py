@@ -17,6 +17,7 @@ def generate_command(model_choice: str, instruction: str, history_size: int = 3,
     normalized_instruction = instruction.lower().strip()
 
     if normalized_instruction in command_cache:
+        print("Command cache hit")
         return command_cache[normalized_instruction]
     
     chat = initialize_chat_model()
@@ -26,6 +27,11 @@ def generate_command(model_choice: str, instruction: str, history_size: int = 3,
         context = "Here are the previous instruction-command pairs of user that may or may not be related to the current instruction:\n"
         for prev_instruction, prev_command in instruction_history:
             context += f"- **Instruction**: {prev_instruction}\n  **Command**: {prev_command}\n\n"
+
+
+    print("Use history: ", use_history)
+    print("History size: ", history_size)
+    print("Context: ", context)
 
     chat_completion = chat.chat.completions.create(
         messages=[

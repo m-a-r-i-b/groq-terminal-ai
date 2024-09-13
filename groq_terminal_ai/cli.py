@@ -12,20 +12,19 @@ def main():
     args = parse_arguments()
     config = load_config()
     
+    # Handle multiple arguments
     if args.groq_api_key:
         save_api_key(args.groq_api_key)
-        sys.exit(0)
-
     if args.model:
         save_model(args.model)
-        sys.exit(0)
-
-    if args.history_size:
-        save_history_size(args.history_size)
-        sys.exit(0)
-
     if args.use_history is not None:
         save_use_history(args.use_history)
+    if args.history_size:
+        save_history_size(args.history_size)
+    
+
+    # Exit if any of the above arguments were provided
+    if any([args.groq_api_key, args.model, args.history_size, args.use_history is not None]):
         sys.exit(0)
 
     api_key = config.get('GROQ_API_KEY')
