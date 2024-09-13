@@ -8,8 +8,8 @@ def load_config():
     if os.path.exists(CONFIG_PATH):
         with open(CONFIG_PATH) as config_file:
             config = json.load(config_file)
-            if 'OPENAI_API_KEY' in config:
-                os.environ['OPENAI_API_KEY'] = config['OPENAI_API_KEY']
+            if 'GROQ_API_KEY' in config:
+                os.environ['GROQ_API_KEY'] = config['GROQ_API_KEY']
             return config
     return {}
 
@@ -19,9 +19,9 @@ def save_config(config):
 
 def save_api_key(api_key):
     config = load_config()
-    config['OPENAI_API_KEY'] = api_key
+    config['GROQ_API_KEY'] = api_key
     save_config(config)
-    print(f"OPENAI_API_KEY saved at {CONFIG_PATH}.")
+    print(f"GROQ_API_KEY saved at {CONFIG_PATH}.")
 
 def save_model(model):
     config = load_config()

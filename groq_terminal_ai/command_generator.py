@@ -1,9 +1,10 @@
-from langchain_openai import ChatOpenAI
 import platform
 import os
+from groq import Groq
 
 def initialize_chat_model(model_choice):
-    return ChatOpenAI(model=model_choice)
+    client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
+    return client
 
 def generate_command(model_choice: str, instruction: str) -> str:
     os_type = platform.system()
@@ -18,5 +19,5 @@ def generate_command(model_choice: str, instruction: str) -> str:
 
     human_message = ("human", instruction)
 
-    response = chat.invoke([system_message, human_message])
-    return response.content
+    chat_completion = chat.invoke([system_message, human_message])
+    return chat_completion.choices[0].message.content

@@ -3,20 +3,20 @@ requires = ["setuptools>=45", "setuptools_scm[toml]>=6.2"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "cli-ai"
+name = "groq-terminal-ai"
 version = "1.0.0"
 readme = "README.md"
-description = "cli-ai is a command line tool that uses AI to generate terminal commands"
+description = "groq-terminal-ai is a command line tool that uses AI to generate terminal commands"
 dependencies = [
     "pyautogui",
-    "langchain-openai",
+    "groq",
 ]
 
 [project.scripts]
-ai = "cli_ai.cli:main"
+ai = "groq_terminal_ai.cli:main"
 
 [tool.setuptools]
-packages = ["cli_ai"]
+packages = ["groq_terminal_ai"]
 
 [tool.setuptools.dynamic]
 readme = {file = "README.md", content-type = "text/markdown"}

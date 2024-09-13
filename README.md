@@ -1,24 +1,24 @@
-# cli-ai
+# groq-terminal-ai
 
 ## Description
-cli-ai is a command line tool that uses OpenAI's API to generate terminal commands.
+groq-terminal-ai is a command line tool that uses Groq's API to generate terminal commands.
 
 ## Features
 - Minimal setup
-- Ability to choose between different LLMs from OpenAI
+- Ability to choose between different LLMs from Groq
 
 
 ## Installation
 
 ```bash
-pip install cli-ai
+pip install groq-terminal-ai
 ```
 
 ## Usage
 
-Step 1. Set your OpenAI API key
+Step 1. Set your Groq API key
 ```bash
-ai --openai-api-key <your-api-key>
+ai --groq-api-key <your-api-key>
 ```
 
 Step 2. Generate a command
