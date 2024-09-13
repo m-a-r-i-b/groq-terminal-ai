@@ -28,3 +28,13 @@ def save_model(model):
     config['MODEL'] = model
     save_config(config)
     print(f"MODEL saved at {CONFIG_PATH}.")
+
+def save_command_cache(command_cache):
+    config = load_config()
+    config['COMMAND_CACHE'] = command_cache
+    save_config(config)
+    print(f"COMMAND_CACHE saved at {CONFIG_PATH}.")
+
+def load_command_cache():
+    config = load_config()
+    return config.get('COMMAND_CACHE', {})

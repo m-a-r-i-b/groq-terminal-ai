@@ -1,6 +1,7 @@
 import platform
 import os
 from groq import Groq
+from config import load_command_cache, save_command_cache
 
 def initialize_chat_model():
     client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
@@ -10,6 +11,16 @@ def generate_command(model_choice: str, instruction: str) -> str:
     os_type = platform.system()
     shell_type = os.environ.get('SHELL') or os.environ.get('COMSPEC')
 
+    # Load command cache
+    command_cache = load_command_cache()
+
+    # Normalize instruction
+    normalized_instruction = instruction.lower().strip()
+
+    # Check if command is already cached
+    if normalized_instruction in command_cache:
+        return command_cache[normalized_instruction]
+    
     chat = initialize_chat_model()
     chat_completion = chat.chat.completions.create(
         messages=[
@@ -24,4 +35,9 @@ def generate_command(model_choice: str, instruction: str) -> str:
         ],
         model=model_choice,
     )
-    return chat_completion.choices[0].message.content
+    
+    command = chat_completion.choices[0].message.content
+    # Cache the command
+    command_cache[normalized_instruction] = command
+    save_command_cache(command_cache)  # Save updated command cache
+    return command
