@@ -1,6 +1,9 @@
 # groq-terminal-ai
 
-![groq-terminal-ai-demo-ezgif com-video-to-gif-converter(1)](https://github.com/user-attachments/assets/06c52cdd-06b7-4fc3-9a44-8abb78a0069e)
+
+
+https://github.com/user-attachments/assets/a6cb57a5-a597-438c-b976-4a6fd48960af
+
 
 
 **groq-terminal-ai** is a CLI tool that harnesses the power of Groq's API to intelligently generate terminal commands based on natural language instructions.
