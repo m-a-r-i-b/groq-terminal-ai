@@ -80,5 +80,3 @@ ai list all png files in the current directory
 
 - **llama3-70b-8192** - Will be deprecated on August 30, 2025 (use llama-3.3-70b-versatile instead)
 - **llama3-8b-8192** - Will be deprecated on August 30, 2025 (use llama-3.1-8b-instant instead)
-
-**Note:** Vision models have been removed as they're not suitable for command-line terminal operations.
