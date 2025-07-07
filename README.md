@@ -68,3 +68,11 @@ ai list all png files in the current directory
 - llama-3.1-8b-instant
 - llava-v1.5-7b-4096-preview
 - mixtral-8x7b-32768
+
+### Latest Grok Models from xAI
+
+- grok-3-beta (most advanced, superior reasoning capabilities)
+- grok-3-mini-beta (lightweight, faster responses)
+- grok-3-mini-fast-beta (optimized for speed)
+- grok-beta (comparable to Grok 2 with improved efficiency)
+- grok-vision-beta (includes vision capabilities)

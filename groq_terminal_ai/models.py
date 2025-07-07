@@ -9,3 +9,10 @@ class ModelEnum(Enum):
     LLAMA3_1_8B_INSTANT = "llama-3.1-8b-instant"
     LLAVA_V1_5_7B_4096_PREVIEW = "llava-v1.5-7b-4096-preview"
     MIXTRAL_8X7B_32768 = "mixtral-8x7b-32768"
+    
+    # Latest Grok models from xAI
+    GROK_3_BETA = "grok-3-beta"
+    GROK_3_MINI_BETA = "grok-3-mini-beta"
+    GROK_3_MINI_FAST_BETA = "grok-3-mini-fast-beta"
+    GROK_BETA = "grok-beta"
+    GROK_VISION_BETA = "grok-vision-beta"
