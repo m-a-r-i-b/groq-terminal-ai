@@ -40,7 +40,7 @@ ai list all png files in the current directory
 
 - Choose a specific LLM model:
   ```bash
-  ai --model <model-name> (default llama3-8b-8192)
+  ai --model <model-name> (default llama-3.1-8b-instant)
   ```
 
 - Set the history size for context-aware suggestions:
@@ -60,19 +60,25 @@ ai list all png files in the current directory
 
 ## Supported Models
 
-- llama3-8b-8192
-- gemma2-9b-it
-- gemma-7b-it
-- llama3-70b-8192
-- llama-3.1-70b-versatile
-- llama-3.1-8b-instant
-- llava-v1.5-7b-4096-preview
-- mixtral-8x7b-32768
+### Current Production Models
 
-### Latest Grok Models from xAI
+- **llama-3.3-70b-versatile** - Latest Llama 3.3 model with excellent reasoning capabilities
+- **llama-3.1-8b-instant** - Fast and efficient model, great for quick command generation
+- **gemma2-9b-it** - Google's Gemma 2 model optimized for instruction following
 
-- grok-3-beta (most advanced, superior reasoning capabilities)
-- grok-3-mini-beta (lightweight, faster responses)
-- grok-3-mini-fast-beta (optimized for speed)
-- grok-beta (comparable to Grok 2 with improved efficiency)
-- grok-vision-beta (includes vision capabilities)
+### Latest Advanced Models
+
+- **meta-llama/llama-4-scout-17b-16e-instruct** - Llama 4 Scout for complex reasoning tasks
+- **meta-llama/llama-4-maverick-17b-128e-instruct** - Llama 4 Maverick for multilingual tasks
+- **deepseek-r1-distill-llama-70b** - Advanced reasoning model for complex problem-solving
+- **deepseek-r1-distill-qwen-32b** - Efficient reasoning model with strong coding capabilities
+- **qwen-2.5-32b** - Qwen 2.5 with improved coding and instruction following
+- **qwen-qwq-32b** - Latest Qwen reasoning model
+- **mistral-saba-24b** - Updated Mistral model
+
+### Legacy Models (Being Deprecated)
+
+- **llama3-70b-8192** - Will be deprecated on August 30, 2025 (use llama-3.3-70b-versatile instead)
+- **llama3-8b-8192** - Will be deprecated on August 30, 2025 (use llama-3.1-8b-instant instead)
+
+**Note:** Vision models have been removed as they're not suitable for command-line terminal operations.

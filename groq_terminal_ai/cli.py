@@ -30,7 +30,7 @@ def main():
         print("Please set the GROQ_API_KEY with 'ai --groq-api-key <key>'.")
         sys.exit(1)
 
-    model_choice = args.model or config.get('MODEL') or ModelEnum.LLAMA3_8B_8192.value
+    model_choice = args.model or config.get('MODEL') or ModelEnum.LLAMA3_1_8B_INSTANT.value
     history_size = args.history_size if args.history_size is not None else load_history_size()
     use_history = args.use_history if args.use_history is not None else load_use_history()
 
