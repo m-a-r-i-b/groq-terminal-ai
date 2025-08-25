@@ -48,13 +48,26 @@ def generate_command(model_choice: str, instruction: str, history_size: int = 3,
         model=model_choice,
         stream=True,
     )
-    
+
     command = ""
     for chunk in chat_completion:
         chunk_content = chunk.choices[0].delta.content
         if chunk_content is not None:
             command += chunk_content
-            pyautogui.write(chunk_content)
+
+    # Output the complete command for review
+    print(f"{command}")
+
+    # Split the command by newlines for execution, but keep it unchanged in the command variable
+    commands = command.splitlines()
+
+    # Ask for confirmation before executing the commands
+    if input("Do you want to execute this/these command(s)? [y/N]: ").lower() == 'y':
+        for cmd in commands:
+            pyautogui.write(cmd)
+            pyautogui.press("enter")  # Ensure each command is executed by pressing "Enter" after it
+    else:
+        print("Command execution aborted.")
 
     command_cache[normalized_instruction] = command
     save_command_cache(command_cache)
